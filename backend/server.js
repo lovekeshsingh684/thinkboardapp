@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import path, { resolve } from "path"
-import pathToRegexp from 'path-to-regexp'
+
 
 import notesRoutes from './routes/notesRoutes.js'
 import { connectDB } from './config/db.js'
