@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import toast from "react-hot-toast";
 import { ArrowLeftIcon, LoaderIcon, Trash2Icon } from "lucide-react";
+import { useParams } from 'react-router';
+
 
 import axiosInstance from "../lib/axios";
 
@@ -19,7 +21,7 @@ const NoteDetailPage = () => {
         const res = await axiosInstance.get(`/notes/${id}`);
         setNote(res.data);
       } catch (error) {
-        // console.error("Error fetching note:", error);
+        console.error("Error fetching note:", error);
         toast.error("Failed to fetch the note");
       } finally {
         setLoading(false);
